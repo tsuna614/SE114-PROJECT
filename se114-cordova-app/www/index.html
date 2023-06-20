@@ -1,50 +1,85 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 
-    http://www.apache.org/licenses/LICENSE-2.0
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+</head>
+<body>
 
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
-<html>
-    <head>
-        <meta charset="utf-8">
-        <!--
-        Customize this policy to fit your own app's needs. For more guidance, please refer to the docs:
-            https://cordova.apache.org/docs/en/latest/
-        Some notes:
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
-        <meta name="color-scheme" content="light dark">
-        <link rel="stylesheet" href="css/index.css">
-        <title>Hello World</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+    <ons-splitter>
+        <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
+          <ons-page>
+            <ons-list>
+              <ons-list-item onclick="fn.load('home.html')" tappable>
+                Home
+              </ons-list-item>
+              <ons-list-item onclick="fn.load('note.html')" tappable>
+                Note
+              </ons-list-item>
+              <ons-list-item onclick="fn.load('settings.html')" tappable>
+                Settings
+              </ons-list-item>
+            </ons-list>
+          </ons-page>
+        </ons-splitter-side>
+        <ons-splitter-content id="content" page="home.html"></ons-splitter-content>
+    </ons-splitter>
+      
+    <template id="home.html">
+        <ons-page>
+            <ons-toolbar>
+            <div class="left">
+                <ons-toolbar-button onclick="fn.open()">
+                <ons-icon icon="md-menu"></ons-icon>
+                </ons-toolbar-button>
             </div>
-        </div>
-        <script src="cordova.js"></script>
-        <script src="js/index.js"></script>
-    </body>
+            <div class="center">
+                Calendar
+            </div>
+            </ons-toolbar>
+            <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
+            Swipe right to open the menu!
+            </p>
+        </ons-page>
+    </template>
+
+    <template id="note.html">
+        <ons-page>
+            <ons-toolbar>
+            <div class="left">
+                <ons-toolbar-button onclick="fn.open()">
+                <ons-icon icon="md-menu"></ons-icon>
+                </ons-toolbar-button>
+            </div>
+            <div class="center">
+                Note
+            </div>
+            </ons-toolbar>
+        </ons-page>
+    </template>
+    
+    <template id="settings.html">
+        <ons-page>
+            <ons-toolbar>
+              <div class="center">Date Picker Example</div>
+            </ons-toolbar>
+          
+            <div style="text-align: center; margin-top: 20px;">
+              <ons-date-picker id="date-picker"></ons-date-picker>
+              <br><br>
+              <ons-button onclick="showSelectedDate()">Show Selected Date</ons-button>
+              <br><br>
+              <div id="selected-date"></div>
+            </div>
+          </ons-page>
+    </template>
+
+    <script src="./js/index.js"></script>
+</body>
 </html>
