@@ -11,7 +11,6 @@
     <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
 </head>
 <body>
-
     <ons-splitter>
         <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
           <ons-page>
@@ -34,14 +33,14 @@
     <template id="home.html">
         <ons-page>
             <ons-toolbar>
-            <div class="left">
-                <ons-toolbar-button onclick="fn.open()">
-                <ons-icon icon="md-menu"></ons-icon>
-                </ons-toolbar-button>
-            </div>
-            <div class="center">
-                Calendar
-            </div>
+              <div class="left">
+                  <ons-toolbar-button onclick="fn.open()">
+                  <ons-icon icon="md-menu"></ons-icon>
+                  </ons-toolbar-button>
+              </div>
+              <div class="center">
+                  Calendar
+              </div>
             </ons-toolbar>
             <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
             Swipe right to open the menu!
@@ -51,22 +50,62 @@
 
     <template id="note.html">
         <ons-page>
-            <ons-toolbar>
-            <div class="left">
-                <ons-toolbar-button onclick="fn.open()">
-                <ons-icon icon="md-menu"></ons-icon>
-                </ons-toolbar-button>
-            </div>
-            <div class="center">
-                Note
-            </div>
-            </ons-toolbar>
+          <!-- creating 2 pages inside of note.html -->
+          <!-- first we navigate to notelist.html, then we push addpage.html when pressing fab -->
+          <ons-navigator page="notelist.html"></ons-navigator>
+
+          <template id="notelist.html">
+            <ons-page>
+              <ons-toolbar>
+                <div class="left">
+                    <ons-toolbar-button onclick="fn.open()">
+                    <ons-icon icon="md-menu"></ons-icon>
+                    </ons-toolbar-button>
+                </div>
+                <div class="center">
+                    Note
+                </div>
+              </ons-toolbar>
+              <div style="margin-top: 30px;">
+                <!-- form -->
+                <p>
+                  <ons-input id="title" modifier="transparent" placeholder="Enter your title" float></ons-input>
+                </p>
+                <p>
+                  <ons-input id="content" modifier="transparent" type="password" placeholder="Enter your content" float></ons-input>
+                </p>
+                <p style="text-align: center; margin-top: 30px;">
+                  <ons-button onclick="login()">Add note</ons-button>
+                </p>
+                <!-- floating action button -->
+                <ons-fab position="bottom right" onclick="pushNewPage()">
+                  <ons-icon icon="md-plus"></ons-icon>
+                </ons-fab>
+              </div>
+            </ons-page>
+          </template>
+
+          <!-- new page for adding notes -->
+          <template id="addpage.html">
+            <ons-page>
+              <ons-toolbar>
+                <div class="center">New Page</div>
+              </ons-toolbar>
+              <ons-button onclick="popPage()">Pop Page</ons-button>
+            </ons-page>
+          </template>
+
         </ons-page>
     </template>
     
     <template id="settings.html">
         <ons-page>
             <ons-toolbar>
+              <div class="left">
+                <ons-toolbar-button onclick="fn.open()">
+                <ons-icon icon="md-menu"></ons-icon>
+                </ons-toolbar-button>
+              </div>
               <div class="center">Date Picker Example</div>
             </ons-toolbar>
           
