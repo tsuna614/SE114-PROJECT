@@ -17,7 +17,7 @@
     <ons-splitter>
       <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
         <ons-page>
-          <ons-list>
+          <ons-list style="margin-top: 60px">
             <ons-list-item onclick="fn.load('home.html')" tappable>
               Home
             </ons-list-item>
@@ -104,15 +104,14 @@
               </p>
               <p>
                 <ons-input
-                  id="content"
+                  id="new-todo"
                   modifier="transparent"
-                  type="password"
                   placeholder="Enter your content"
                   float
                 ></ons-input>
               </p>
               <p style="text-align: center; margin-top: 30px">
-                <ons-button onclick="login()">Add note</ons-button>
+                <ons-button id="add-button">Add note</ons-button>
               </p>
             </div>
           </ons-page>
