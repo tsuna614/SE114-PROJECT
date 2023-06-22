@@ -1,64 +1,68 @@
-<ons-page>
-    <!-- creating 2 pages inside of note.html -->
-    <!-- first we navigate to notelist.html, then we push addpage.html when pressing fab -->
-    <ons-navigator page="notelist.html"></ons-navigator>
+<ons-page id="note-page">
+  <!-- creating 2 pages inside of note.html -->
+  <!-- first we navigate to template-list, then we push addpage.html when pressing fab -->
+  <ons-navigator page="template-list"></ons-navigator>
 
-    <!-- 1st page -->
-    <template id="notelist.html">
-      <ons-page>
-        <ons-toolbar>
-          <div class="left">
-            <ons-toolbar-button onclick="fn.open()">
-              <ons-icon icon="md-menu"></ons-icon>
-            </ons-toolbar-button>
-          </div>
-          <div class="center">Note</div>
-        </ons-toolbar>
-        <div style="margin-top: 30px">
-          <!-- To-do list -->
-          <ons-list id="todo-list">
-            <!-- Todo items will be added dynamically -->
-          </ons-list>
 
-          <!-- floating action button -->
-          <ons-fab position="bottom right" onclick="pushNewPage()">
-            <ons-icon icon="md-plus"></ons-icon>
-          </ons-fab>
+  <!-- 1st page -->
+  <template id="template-list">
+    <ons-page id="note-page-list">
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button onclick="fn.open()">
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
         </div>
-      </ons-page>
-    </template>
+        <div class="center">Note</div>
+      </ons-toolbar>
+      <div style="margin-top: 30px">
 
-    <!-- 2nd page for adding note -->
-    <template id="addpage.html">
-      <ons-page>
-        <ons-toolbar>
-          <div class="left">
-            <ons-back-button onclick="popPage()">Notes</ons-back-button>
-          </div>
-          <div class="center">New Page</div>
-        </ons-toolbar>
-        <div style="margin-top: 30px">
-          <!-- form -->
-          <p>
-            <ons-input
-              id="title"
-              modifier="transparent"
-              placeholder="Enter your title"
-              float
-            ></ons-input>
-          </p>
-          <p>
-            <ons-input
-              id="new-todo"
-              modifier="transparent"
-              placeholder="Enter your content"
-              float
-            ></ons-input>
-          </p>
-          <p style="text-align: center; margin-top: 30px">
-            <ons-button id="add-button">Add note</ons-button>
-          </p>
+
+
+        <!-- To-do list -->
+        <ons-list id="todo-list">
+          <!-- Todo items will be added dynamically -->
+        </ons-list>
+
+        <!-- floating action button -->
+        <ons-fab position="bottom right" id="plus-btn">
+          <ons-icon icon="md-plus" onclick="pushNewPage()"></ons-icon>
+        </ons-fab>
+      </div>
+    </ons-page>
+  </template>
+
+  <!-- 2nd page for adding note -->
+  <template id="template-add">
+    <ons-page id="note-page-add">
+      <ons-toolbar>
+        <div class="left">
+          <ons-back-button onclick="popPage()">Notes</ons-back-button>
         </div>
-      </ons-page>
-    </template>
-  </ons-page>
+        <div class="center">New Page</div>
+      </ons-toolbar>
+      <div style="margin-top: 30px">
+        <!-- form -->
+        <p>
+          <ons-input
+            id="title"
+            modifier="transparent"
+            placeholder="Enter your title"
+            float
+          ></ons-input>
+        </p>
+        <p>
+          <ons-input
+            id="new-todo"
+            modifier="transparent"
+            placeholder="Enter your content"
+            float
+          ></ons-input>
+        </p>
+        <p style="text-align: center; margin-top: 30px">
+          <ons-button id="add-button">Add note</ons-button>
+        </p>
+      </div>
+    </ons-page>
+  </template>
+</ons-page>

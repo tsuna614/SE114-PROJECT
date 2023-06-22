@@ -14,6 +14,8 @@
     <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
   </head>
   <body>
+    <div id="test2"></div>
+
     <ons-splitter>
       <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
         <ons-page>
@@ -32,8 +34,9 @@
       </ons-splitter-side>
       <ons-splitter-content
         id="content"
-        page="html/home.html"
-      ></ons-splitter-content>
+        page="html/home.html">
+      <!-- inside this is the content of another ons-page in other html files -->
+      </ons-splitter-content>
     </ons-splitter>
 
     <!-- <template id="home.html">
@@ -47,8 +50,9 @@
           <div class="center">Calendar</div>
         </ons-toolbar>
         <p style="text-align: center; opacity: 0.6; padding-top: 20px">
-          Swipe right to open the menu!
+          Swipe right to open the menuasdas!
         </p>
+        <ons-button id="test">Add</ons-button>
       </ons-page>
     </template> -->
 
