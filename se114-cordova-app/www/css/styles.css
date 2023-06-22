@@ -1,0 +1,15 @@
+#myList {
+    margin: 10px;
+    display: grid;
+}
+
+#myList li {
+    margin: 10px;
+    width: 250px;
+    height: auto;
+    list-style: none;
+    background: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    padding-top: 10px;
+}

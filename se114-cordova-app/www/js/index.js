@@ -6,6 +6,7 @@ window.fn.open = function () {
   menu.open();
 };
 
+// load the pages
 window.fn.load = function (page) {
   var content = document.getElementById("content");
   var menu = document.getElementById("menu");
@@ -23,16 +24,19 @@ function debugOut() {
   console.log("Hello");
 }
 
+// navigator.push new page
 function pushNewPage() {
   var navigator = document.querySelector("ons-navigator");
   navigator.pushPage("template-add");
 }
 
+// navigator.pop current pushed page
 function popPage() {
   var navigator = document.querySelector("ons-navigator");
   navigator.popPage();
 }
 
+// initialize variables and events for the app
 document.addEventListener("init", function (event) {
   const page = event.target;
   var titlesArray = [];
@@ -47,12 +51,42 @@ document.addEventListener("init", function (event) {
       const newPage = pageEvent.target;
       if (newPage.matches("#note-page-list")) {
         console.log("Init note page list");
+
+        var list = document.getElementById("myList");
+
+        for (var i = 0; i < titlesArray.length; i++) {
+          var li = document.createElement("li");
+          var para = document.createElement("p");
+          var span = document.createElement("span");
+          var title = document.createTextNode(titlesArray[i]);
+          var content = document.createTextNode(contentsArray[i]);
+          para.appendChild(title);
+          span.appendChild(content);
+          li.appendChild(para);
+          li.appendChild(span);
+          list.appendChild(li);
+        }
       } else if (newPage.matches("#note-page-add")) {
         console.log("Init note page add");
 
+        var newTitle = document.getElementById("new-title");
+        var newContent = document.getElementById("new-content");
         var addButton = document.getElementById("add-button");
         addButton.addEventListener("click", function () {
-          console.log("Hello worlddddd");
+          var newTitleText = newTitle.value.trim();
+          var newContentText = newContent.value.trim();
+          if (newTitleText !== "" && newContentText !== "") {
+            console.log(newTitleText);
+            console.log(newContentText);
+            // push the input to the arrays
+            titlesArray.push(newTitleText);
+            contentsArray.push(newContentText);
+            // resets the value for the inputs
+            newTitle.value = "";
+            newContent.value = "";
+            // popPage();
+            fn.load("html/note.html");
+          }
         });
       }
     });

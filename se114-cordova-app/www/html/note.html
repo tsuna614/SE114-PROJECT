@@ -19,10 +19,13 @@
 
 
 
-        <!-- To-do list -->
-        <ons-list id="todo-list">
-          <!-- Todo items will be added dynamically -->
-        </ons-list>
+        <!-- Note list -->
+        <ul id="myList" style="list-style-type: none;">
+          <li>
+            <p>Title</p>
+            <span>Contents</span>
+          </li>
+        </ul>
 
         <!-- floating action button -->
         <ons-fab position="bottom right" id="plus-btn">
@@ -45,7 +48,7 @@
         <!-- form -->
         <p>
           <ons-input
-            id="title"
+            id="new-title"
             modifier="transparent"
             placeholder="Enter your title"
             float
@@ -53,7 +56,7 @@
         </p>
         <p>
           <ons-input
-            id="new-todo"
+            id="new-content"
             modifier="transparent"
             placeholder="Enter your content"
             float
