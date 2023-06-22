@@ -35,6 +35,8 @@ function popPage() {
 
 document.addEventListener("init", function (event) {
   const page = event.target;
+  var titlesArray = [];
+  var contentsArray = [];
 
   if (page.matches("#home-page")) {
     console.log("Init home page");
@@ -60,6 +62,8 @@ document.addEventListener("init", function (event) {
     //   .addEventListener("click", () => {
     //     console.log("thanh cong");
     //   });
+  } else if (page.matches("#settings-page")) {
+    console.log("Init settings page");
   }
 });
 
