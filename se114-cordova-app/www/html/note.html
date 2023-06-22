@@ -20,12 +20,14 @@
 
 
         <!-- Note list -->
-        <ul id="myList" style="list-style-type: none;">
-          <li>
-            <p>Title</p>
-            <span>Contents</span>
-          </li>
-        </ul>
+        <div style="width: 300px;">
+          <ul id="myList" style="list-style-type: none;">
+            <li>
+              <p>Title</p>
+              <span>Contents</span>
+            </li>
+          </ul>
+        </div>
 
         <!-- floating action button -->
         <ons-fab position="bottom right" id="plus-btn">
@@ -44,24 +46,25 @@
         </div>
         <div class="center">New Page</div>
       </ons-toolbar>
-      <div style="margin-top: 30px">
-        <!-- form -->
+      <div style="margin-top: 30px" id="myForm">
+        <!-- Form -->
         <p>
           <ons-input
             id="new-title"
             modifier="transparent"
             placeholder="Enter your title"
-            float
           ></ons-input>
         </p>
         <p>
-          <ons-input
+          <!-- <ons-input
             id="new-content"
             modifier="transparent"
             placeholder="Enter your content"
-            float
-          ></ons-input>
+            floats
+          ></ons-input> -->
+          <textarea class="textarea" id="new-content" rows="10" placeholder="Enter your content"></textarea>
         </p>
+        <!-- Add button -->
         <p style="text-align: center; margin-top: 30px">
           <ons-button id="add-button">Add note</ons-button>
         </p>

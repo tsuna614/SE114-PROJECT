@@ -13,3 +13,19 @@
     padding: 30px;
     padding-top: 10px;
 }
+
+#myList li p {
+    font-weight: bold;
+}
+
+#new-title {
+    width: 300px;
+}
+
+#new-content {
+    width: 300px;
+}
+
+#myForm {
+    margin: 50px;
+}
