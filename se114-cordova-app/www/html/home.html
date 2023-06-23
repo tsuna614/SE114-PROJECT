@@ -7,7 +7,25 @@
       </div>
       <div class="center">Calendar</div>
     </ons-toolbar>
-    <p style="text-align: center; opacity: 0.6; padding-top: 20px">
-      Swipe right to open the menu!
-    </p>
+    <div class="wrapper">
+      <header>
+        <p class="current-date"></p>
+        <div class="icons">
+          <ons-icon id="prev" icon="md-arrow-left"></ons-icon>
+          <ons-icon id="next" icon="md-arrow-right"></ons-icon>
+        </div>
+      </header>
+      <div class="calendar">
+        <ons-list class="weeks">
+          <ons-list-item>Sun</ons-list-item>
+          <ons-list-item>Mon</ons-list-item>
+          <ons-list-item>Tue</ons-list-item>
+          <ons-list-item>Wed</ons-list-item>
+          <ons-list-item>Thu</ons-list-item>
+          <ons-list-item>Fri</ons-list-item>
+          <ons-list-item>Sat</ons-list-item>
+        </ón>
+        <ul class="days"></ul>
+      </div>
+    </div>
 </ons-page>
