@@ -17,7 +17,7 @@
       <div style="margin-top: 30px">
         <!-- Note list -->
         <div style="width: auto">
-          <ul id="myList" style="list-style-type: none">
+          <ul id="myList" style="list-style-type: none; width: auto;">
             <li>
               <p>Title</p>
               <span>Contents</span>
@@ -40,7 +40,7 @@
         <div class="left">
           <ons-back-button onclick="popPage()">Notes</ons-back-button>
         </div>
-        <div class="center">New Page</div>
+        <div class="center">Add new note</div>
       </ons-toolbar>
       <div style="margin-top: 30px" id="myForm">
         <!-- Form -->
@@ -52,12 +52,6 @@
           ></ons-input>
         </p>
         <p>
-          <!-- <ons-input
-            id="new-content"
-            modifier="transparent"
-            placeholder="Enter your content"
-            floats
-          ></ons-input> -->
           <textarea
             class="textarea"
             id="new-content"
