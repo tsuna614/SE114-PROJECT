@@ -1,36 +1,35 @@
 /* Import Google font - Poppins */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-*{
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
-body{
+body {
   display: flex;
   align-items: center;
   padding: 0 10px;
   justify-content: center;
   min-height: 100vh;
-  background: #9B59B6;
+  background: #9b59b6;
 }
-.wrapper{
+.wrapper {
   width: 450px;
   background: #fff;
   border-radius: 10px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
 }
-.wrapper header{
+.wrapper header {
   display: flex;
   align-items: center;
   padding: 25px 30px 10px;
   justify-content: space-between;
 }
-header .icons{
+header .icons {
   display: inline-block;
- 
 }
-header .icons ons-icon{
+header .icons ons-icon {
   height: 38px;
   width: 38px;
   margin: 0;
@@ -42,52 +41,52 @@ header .icons ons-icon{
   user-select: none;
   border-radius: 50%;
 }
-.icons ons-icon:last-child{
+.icons ons-icon:last-child {
   margin-right: 20px;
 }
-header .icons ons-icon:hover{
+header .icons ons-icon:hover {
   background: #f2f2f2;
 }
-header .current-date{
+header .current-date {
   font-size: 1.45rem;
   font-weight: 500;
 }
-.calendar{
+.calendar {
   padding: 20px;
 }
-.calendar ons-list{
+.calendar ons-list {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
   text-align: center;
   width: fit-content;
 }
-.calendar .days{
+.calendar .days {
   margin-bottom: 20px;
 }
-.calendar ons-list-item{
+.calendar ons-list-item {
   color: #333;
   width: calc(100% / 7);
   font-size: 1.07rem;
 }
-.calendar .weeks ons-list-item{
+.calendar .weeks ons-list-item {
   font-weight: 500;
   cursor: default;
   display: inline;
 }
-.calendar .days ons-list-item{
+.calendar .days ons-list-item {
   z-index: 1;
   cursor: pointer;
   position: relative;
   margin-top: 30px;
 }
-.days ons-list-item.inactive{
+.days ons-list-item.inactive {
   color: #aaa;
 }
-.days ons-list-item.active{
+.days ons-list-item.active {
   color: #fff;
 }
-.days ons-list-item::before{
+.days ons-list-item::before {
   position: absolute;
   content: "";
   left: 50%;
@@ -98,43 +97,43 @@ header .current-date{
   border-radius: 50%;
   transform: translate(-50%, -50%);
 }
-.days ons-list-item.active::before{
-  background: #9B59B6;
+.days ons-list-item.active::before {
+  background: #9b59b6;
 }
-.days ons-list-item:not(.active):hover::before{
+.days ons-list-item:not(.active):hover::before {
   background: #f2f2f2;
 }
 
 #myList {
-    margin: 10px;
-    display: grid;
+  margin: 10px;
+  display: grid;
 }
 
-#myList ons-list-item {
-    margin: 10px;
-    width: auto;
-    height: auto;
-    list-style: none;
-    background: #fff;
-    border-radius: 10px;
-    padding: 30px;
-    padding-top: 10px;
+#myList li {
+  margin: 10px;
+  width: auto;
+  height: auto;
+  list-style: none;
+  background: #fff;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  padding: 30px;
+  padding-top: 10px;
 }
 
-#myList ons-list-item p {
-    font-weight: bold;
+#myList li p {
+  font-weight: bold;
 }
 
 #new-title {
-    width: 300px;
+  width: 400px;
 }
 
 #new-content {
-    width: 300px;
+  width: 400px;
 }
 
 #myForm {
-    margin: 50px;
+  margin: 50px;
 }
-
-

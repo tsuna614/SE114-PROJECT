@@ -3,7 +3,6 @@
   <!-- first we navigate to template-list, then we push addpage.html when pressing fab -->
   <ons-navigator page="template-list"></ons-navigator>
 
-
   <!-- 1st page -->
   <template id="template-list">
     <ons-page id="note-page-list">
@@ -16,12 +15,9 @@
         <div class="center">Note</div>
       </ons-toolbar>
       <div style="margin-top: 30px">
-
-
-
         <!-- Note list -->
-        <div style="width: auto;">
-          <ul id="myList" style="list-style-type: none;">
+        <div style="width: auto">
+          <ul id="myList" style="list-style-type: none">
             <li>
               <p>Title</p>
               <span>Contents</span>
@@ -62,7 +58,12 @@
             placeholder="Enter your content"
             floats
           ></ons-input> -->
-          <textarea class="textarea" id="new-content" rows="10" placeholder="Enter your content"></textarea>
+          <textarea
+            class="textarea"
+            id="new-content"
+            rows="10"
+            placeholder="Enter your content"
+          ></textarea>
         </p>
         <!-- Add button -->
         <p style="text-align: center; margin-top: 30px">
