@@ -15,7 +15,7 @@ body {
   background: #9b59b6;
 }
 .wrapper {
-  width: 450px;
+  width: 100%;
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
@@ -42,7 +42,7 @@ header .icons ons-icon {
   border-radius: 50%;
 }
 .icons ons-icon:last-child {
-  margin-right: 20px;
+  margin-right: -10px;
 }
 header .icons ons-icon:hover {
   background: #f2f2f2;
@@ -59,10 +59,10 @@ header .current-date {
   flex-wrap: wrap;
   list-style: none;
   text-align: center;
-  width: fit-content;
 }
 .calendar .days {
   margin-bottom: 20px;
+  display: flex;
 }
 .calendar ons-list-item {
   color: #333;
@@ -72,13 +72,13 @@ header .current-date {
 .calendar .weeks ons-list-item {
   font-weight: 500;
   cursor: default;
-  display: inline;
 }
 .calendar .days ons-list-item {
   z-index: 1;
   cursor: pointer;
   position: relative;
   margin-top: 30px;
+  display: inline;
 }
 .days ons-list-item.inactive {
   color: #aaa;
